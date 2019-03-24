@@ -1,3 +1,6 @@
+
+![Space Image](https://www.github.com/xanderia/xanderia/raw/master/docs/unsplash_teddykelley__4Ib-a8g9aA.jpeg "Unsplash @teddykelley")
+
 # Xanderia Monorepo
 
 ## Structure
