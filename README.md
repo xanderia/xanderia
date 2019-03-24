@@ -1,5 +1,5 @@
 
-![Space Image](https://www.github.com/xanderia/xanderia/raw/master/docs/unsplash_teddykelley__4Ib-a8g9aA.jpeg "Unsplash @teddykelley")
+![Space Image](https://www.github.com/xanderia/xanderia/blob/master/docs/unsplash_teddykelley__4Ib-a8g9aA.jpeg "Unsplash @teddykelley")
 
 # Xanderia Monorepo
 
@@ -11,3 +11,9 @@
 | `/xata` | XATA library, used by others projects |
 | `/functions` | Firebase Functions for all server-side services |
 | `/*` | Specific app, e.g. `/chat`, `/calendar`, `tasks` |
+
+## Branches
+
+| Branch | Description |
+| :----- | :---------- |
+| `master` | ... |
