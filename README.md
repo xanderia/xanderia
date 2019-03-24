@@ -7,7 +7,11 @@
 
 This monorepo contains all apps and services for the Xanderia app suite.
 
-###### Architecture
+# Apps
+
+- shop-playground
+
+# Architecture
 
 Expo, Firebase
 
@@ -18,7 +22,11 @@ Expo, Firebase
 | `/`    | Configuration Files |
 | `/xata` | XATA library, used by others projects |
 | `/functions` | Firebase Functions for all server-side services |
-| `/*` | Specific app, e.g. `/chat`, `/calendar`, `tasks` |
+| `/docs` | Documentation |
+| `/<app>` | Specific app, e.g. `/chat`, `/calendar`, `tasks` |
+| `/<app>/src` | Source code |
+| `/<app>/dist` | Distributable files, i.e. `/android`, `/ios`, `/web` |
+
 
 # Branches
 
