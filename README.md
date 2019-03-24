@@ -14,6 +14,6 @@
 
 ## Branches
 
-| Branch | Description |
-| :----- | :---------- |
-| `master` | ... |
+| Branch | Description |
+| :----- | :---------- |
+| `master`    | Master |
