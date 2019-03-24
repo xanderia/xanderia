@@ -1,0 +1,19 @@
+{
+  "name": "xanderia",
+  "version": "0.1.0",
+  "description": "Xanderia Monorepo",
+  "main": "/dist/web/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xanderia/xanderia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xanderia/xanderia/issues"
+  },
+  "homepage": "https://github.com/xanderia/xanderia#readme"
+}
