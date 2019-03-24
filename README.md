@@ -1,5 +1,5 @@
 
-![Space Image](https://www.github.com/xanderia/xanderia/blob/master/docs/unsplash_teddykelley__4Ib-a8g9aA.jpeg "Unsplash @teddykelley")
+![Space Image](docs/unsplash_teddykelley__4Ib-a8g9aA.jpeg "Unsplash @teddykelley")
 
 # Xanderia Monorepo
 
