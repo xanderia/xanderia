@@ -5,7 +5,13 @@
 
 # Xanderia Monorepo
 
-## Structure
+This monorepo contains all apps and services for the Xanderia app suite.
+
+###### Architecture
+
+Expo, Firebase
+
+# Structure
 
 | Folder | Description |
 | :----- | :---------- |
@@ -14,7 +20,7 @@
 | `/functions` | Firebase Functions for all server-side services |
 | `/*` | Specific app, e.g. `/chat`, `/calendar`, `tasks` |
 
-## Branches
+# Branches
 
 | Branch | Description |
 | :----- | :---------- |
