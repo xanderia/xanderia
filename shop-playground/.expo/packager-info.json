@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 90566,
+  "webpackServerPort": 19003,
+  "expoServerNgrokUrl": "https://jj-tka.alexgrafe.shop-playground.exp.direct",
+  "packagerNgrokUrl": "https://packager.jj-tka.alexgrafe.shop-playground.exp.direct",
+  "ngrokPid": 90616
+}
