@@ -9,6 +9,17 @@
 		<link rel="apple-touch-startup-image" href="/shop-playground/apple-touch-icon.png"/>
 		<link rel="mask-icon" href="" color=""/>
 
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,maximum-scale=1,minimum-scale=1">
+		<meta name="description" content="A Neat Expo App">
+		<meta name="theme-color" content="#000000">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="Shop Playground">
+		<meta name="application-name" content="Shop Playground">
+		<meta name="msapplication-navbutton-color" content="#000000">
+		<meta name="msapplication-TileColor" content="">
+		<meta name="msapplication-TileImage" content="">
+
 		<style>
 			body,html {
 				height:			100%;
@@ -20,6 +31,7 @@
 			#app-area {
 				display:			flex;
 				flex-direction:		column;
+				width:				100%;
 				height:				100%;
 				margin:				0;
 				padding:			0;
@@ -28,21 +40,70 @@
 			}
 
 			#main-area {
-				width:				800px;
+				width:				100%;
+				max-width:			800px;
 				height:				100%;
 				margin-left:		auto;
 				margin-right:		auto;
 				padding-top:		30px;
-				padding-left:		20px;
-				padding-right:		20px;
+				/* padding-left:		20px; */
+				/* padding-right:		20px; */
 				background-color:	white;
+			}
+
+			#header-area {
+				width: 50%;
+				min-width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 25px;
+			}
+
+			#header {
+				font-size: 18px;
+				color: #333333;
+				text-align: center;
+			}
+
+			#load-paypal-area {
+			    width: 50%;
+			    min-width: 300px;
+			    margin-left: auto;
+			    margin-right: auto;
+			    margin-bottom: 20px;
+			    display: flex;
+			    flex-direction: row;
+			    justify-content: space-between;
+			    align-items: stretch;
+			    height: 35px;
+			    border: none;
+			}
+
+			.load-paypal-button {
+			    font-size: 14px;
+			    color: white;
+			    border: none;
+			    margin-right: 5px;
+			    outline: none;
+				border-radius: 1px;
+			}
+
+			#load-paypal-button-automatically {
+				flex: 3;
+				background-color: forestgreen;
+			}
+
+			#load-paypal-button-manually {
+				flex: 1;
+				background-color: yellowgreen;
 			}
 
 			#orchestration-button-container {
 				display:			flex;
 				flex-direction:		column;
 				justify-content:	space-around;
-				width:				400px;
+				width:				50%;
+				min-width:			300px;
 				margin-left:		auto;
 				margin-right:		auto;
 			}
@@ -51,34 +112,128 @@
 				height:				35px;
 				margin-bottom:		3px;
 				font-size:			14px;
-				padding-left:		25%;
+				padding-left:		20px;
 				text-align:			left;
-				background-color:	white;
-				border:				3px solid black;
-				border-radius:		6px;
+				background-color:	#efefef;
+				border:				none;
+				border-radius:		1px;
 				color:				black;
+				outline:			none;
 			}
 			#orchestration-button-select-payment-option {
 				color:				#909090;
 			}
+
+			#paypal-ucc-area {
+				margin-top: 50px;
+				width: 50%;
+				min-width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#paypal-ucc-labels {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: no-wrap;
+				justify-content: space-between;
+				align-items: stretch;
+				align-content: stretch;
+			}
+
+			.paypal-ucc-label {
+				font-family: 'Helvetica Neue', sans-serif;
+				font-size: 12px;
+				color: lightslategray;
+				margin-bottom: 2px;
+			}
+
+			#paypal-ucc-label-card-number {
+				flex: 2;
+				margin-right: 5px;
+			}
+
+			#paypal-ucc-label-expiration-date {
+				flex: 1;
+				margin-right: 5px;
+			}
+
+			#paypal-ucc-label-cvv {
+				flex: 1;
+				margin-right: 0px;
+			}
+
+			#paypal-ucc-field-area {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: no-wrap;
+				justify-content: space-between;
+				align-items: stretch;
+				align-content: stretch;
+			}
+
+			.paypal-ucc-field {
+				height: 20px;
+				border: 1px solid lightslategray;
+				padding: 3px 8px;
+			}
+
+			#paypal-ucc-card-number {
+				flex: 2;
+				margin-right: 5px;
+			}
+
+			#paypal-ucc-expiration-date {
+				flex: 1;
+				margin-right: 5px;
+			}
+
+			#paypal-ucc-cvv {
+				flex: 1;
+				margin-right: 0px;
+			}
+
+			#paypal-ucc-submit-area {
+			}
+
+			#paypal-ucc-submit {
+				height: 50px;
+				margin-top: 15px;
+				font-size: 17px;
+				width: 100%;
+				background-color: #2C2E2F;
+				border: none;
+				border-radius: 4px;
+				color: white;
+				outline: none;
+			}
+
+			#paypal-sdk-area {
+				margin-top: 15px;
+				width: 50%;
+				min-width: 300px;
+				min-height: 200px;
+				background-color: transparent;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		</style>
 
-		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-		<meta name="description" content="A Neat Expo App">
-		<meta name="theme-color" content="#000000">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="default">
-		<meta name="apple-mobile-web-app-title" content="Shop Playground">
-		<meta name="application-name" content="Shop Playground">
-		<meta name="msapplication-navbutton-color" content="#000000">
-		<meta name="msapplication-TileColor" content="">
-		<meta name="msapplication-TileImage" content="">
 	</head>
 
 	<body>
 
 		<div id="app-area">
 			<div id="main-area">
+				<div id="header-area">
+					<h1 id="header">Shop Playground</h1>
+				</div>
+
+				<div id="load-paypal-area">
+					<button type="button" class="load-paypal-button" id="load-paypal-button-automatically">Load PayPal Area</button>
+					<button type="button" class="load-paypal-button" id="load-paypal-button-manually">manually</button>
+				</div>
+
 				<div id="orchestration-button-container">
 					<button type="button" class="orchestration-button" id="orchestration-button-client-token">1. Retrieve UCC Client Token</button>
 					<button type="button" class="orchestration-button" id="orchestration-button-create-order">2. Create Order</button>
@@ -91,34 +246,29 @@
 					<button type="button" class="orchestration-button" id="orchestration-button-refund-capture">9. Refund Capture</button>
 				</div>
 
-				<div id="paypal-ucc-area" style="margin-top: 50px; width: 50%; margin-left: auto; margin-right: auto;">
+				<div id="paypal-ucc-area">
 					<form id="paypal-ucc-form">
-						<div style="display: flex; flex-direction: row; flex-wrap: no-wrap; justify-content: space-between; align-items: stretch; align-content: stretch; ">
-							<label for="paypal-ucc-card-number"		style="font-family: 'Helvetica Neue', sans-serif; font-size: 12px; color: lightslategray;	order: 1; flex: 2; margin-right: 5px; ">Credit Card Number</label>
-							<label for="paypal-ucc-expiration-date"	style="font-family: 'Helvetica Neue', sans-serif; font-size: 12px; color: lightslategray;	order: 2; flex: 1; margin-right: 5px; ">Expiration Date</label>
-							<label for="paypal-ucc-cvv"				style="font-family: 'Helvetica Neue', sans-serif; font-size: 12px; color: lightslategray;	order: 3; flex: 1; margin-right: 0px; ">CVV</label>
+						<div id="paypal-ucc-labels">
+							<label for="paypal-ucc-card-number"		class="paypal-ucc-label"	id="paypal-ucc-label-card-number">Credit Card Number</label>
+							<label for="paypal-ucc-expiration-date"	class="paypal-ucc-label"	id="paypal-ucc-label-expiration-date">Expiration</label>
+							<label for="paypal-ucc-cvv"				class="paypal-ucc-label"	id="paypal-ucc-label-cvv">CVV</label>
 						</div>
 
-						<div style="display: flex; flex-direction: row; flex-wrap: no-wrap; justify-content: space-between; align-items: stretch; align-content: stretch; ">
-							<div id="paypal-ucc-card-number"		style="height: 20px; border: 1px solid lightslategray; padding: 3px 8px;	order: 1; flex: 2; margin-right: 5px; "></div>
-							<div id="paypal-ucc-expiration-date"	style="height: 20px; border: 1px solid lightslategray; padding: 3px 8px;	order: 2; flex: 1; margin-right: 5px; "></div>
-							<div id="paypal-ucc-cvv"				style="height: 20px; border: 1px solid lightslategray; padding: 3px 8px; 	order: 3; flex: 1; margin-right: 0px; "></div>
+						<div id="paypal-ucc-field-area">
+							<div class="paypal-ucc-field"	id="paypal-ucc-card-number"></div>
+							<div class="paypal-ucc-field"	id="paypal-ucc-expiration-date"></div>
+							<div class="paypal-ucc-field"	id="paypal-ucc-cvv"></div>
 						</div>
 
 						<div id="paypal-ucc-submit-area">
-							<button type="submit" id="paypal-ucc-submit" style="height: 50px; margin-top: 15px; font-size: 17px; width: 100%; background-color:	#2C2E2F; border: none; border-radius: 4px; color: white;">Pay with Credit Card</button>
+							<button type="submit" id="paypal-ucc-submit">Pay with Credit Card</button>
 						</div>
 					</form>
 				</div>
 
-				<!-- NOTE This is not used. Outdated PayPal documentation -->
-				<!--
-				<div id="paypal-3ds-area" style="margin-top: 20px; width: 50%; min-height: 500px; height: 500px; background-color: #EEEEEE; ">
-					<div id="payments-sdk__contingency-lightbox"></div>
-				</div>
-				-->
 
-				<div id="paypal-sdk-area" style="margin-top: 80px; width: 50%; min-height: 200px; background-color: transparent; margin-left: auto; margin-right: auto;">
+
+				<div id="paypal-sdk-area">
 					<div id="paypal-sdk-container">
 					</div>
 				</div>

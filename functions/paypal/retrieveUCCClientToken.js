@@ -35,9 +35,13 @@ module.exports = functions.https.onRequest(async (request, response) => {
 		// universalEvents: 		[...]					// TODO has to be injected from parent thread after switching from HTTP trigger to DB.onWrite trigger through a TaskRequest object
 	};
 
-	firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });
-	const db = firebaseAdmin.firestore();
-	log.init({ firebaseDbHandle: db, firebaseAdminModule: firebaseAdmin });
+
+
+	if (! firebaseAdmin.apps.length) {
+		firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });
+		const db = firebaseAdmin.firestore();
+		log.init({ firebaseDbHandle: db, firebaseAdminModule: firebaseAdmin });
+	}
 
 
 

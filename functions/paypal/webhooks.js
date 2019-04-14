@@ -31,9 +31,13 @@ module.exports = functions.https.onRequest(async (request, response) => {
 		verificationStatus:	'unverified'
 	};
 
-	firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });
-	const db = firebaseAdmin.firestore();
-	log.init({ firebaseDbHandle: db, firebaseAdminModule: firebaseAdmin });
+	
+
+	if (! firebaseAdmin.apps.length) {
+		firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });
+		const db = firebaseAdmin.firestore();
+		log.init({ firebaseDbHandle: db, firebaseAdminModule: firebaseAdmin });
+	}
 
 
 	// TODO look for Webhook ID in DB

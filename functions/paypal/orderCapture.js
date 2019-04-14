@@ -13,15 +13,20 @@ const paypalCredentials	= require("../paypal-credentials.json");
 
 
 
+
 // TODO VERIFY TRANSACTION using GET /orders/id
 
 module.exports = functions.https.onRequest((request, response) => {
 	let f = "functions.paypalOrderCapture";
 	let uuid4 = uuid();
 
-	firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });
-	const db = firebaseAdmin.firestore();
-	log.init({ firebaseDbHandle: db, firebaseAdminModule: firebaseAdmin });
+	
+
+	if (! firebaseAdmin.apps.length) {
+		firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });
+		const db = firebaseAdmin.firestore();
+		log.init({ firebaseDbHandle: db, firebaseAdminModule: firebaseAdmin });
+	}
 
 	accessTokenFirstParty({clientId: paypalCredentials.clientId, clientSecret: paypalCredentials.clientSecret, merchantId: paypalCredentials.merchantId, firebaseAdmin: firebaseAdmin})
 	.then(x => {
