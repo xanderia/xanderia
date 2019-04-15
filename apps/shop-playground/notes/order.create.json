@@ -1,0 +1,42 @@
+{
+    "id": "11E52636GT8542723",
+    "intent": "CAPTURE",
+    "purchase_units": [
+        {
+            "reference_id": "default",
+            "amount": {
+                "currency_code": "EUR",
+                "value": "0.01"
+            },
+            "payee": {
+                "email_address": "paypal-account+DE+Business2@xanderia.one",
+                "merchant_id": "NBERV38QP8R5Q"
+            },
+            "soft_descriptor": "Xanderia"
+        }
+    ],
+    "create_time": "2019-04-15T19:53:23Z",
+    "links": [
+        {
+            "href": "https://api.paypal.com/v2/checkout/orders/11E52636GT8542723",
+            "rel": "self",
+            "method": "GET"
+        },
+        {
+            "href": "https://www.paypal.com/checkoutnow?token=11E52636GT8542723",
+            "rel": "approve",
+            "method": "GET"
+        },
+        {
+            "href": "https://api.paypal.com/v2/checkout/orders/11E52636GT8542723",
+            "rel": "update",
+            "method": "PATCH"
+        },
+        {
+            "href": "https://api.paypal.com/v2/checkout/orders/11E52636GT8542723/capture",
+            "rel": "capture",
+            "method": "POST"
+        }
+    ],
+    "status": "CREATED"
+}

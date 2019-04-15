@@ -56,13 +56,18 @@
 				min-width: 300px;
 				margin-left: auto;
 				margin-right: auto;
-				margin-bottom: 25px;
+				margin-bottom: 40px;
 			}
 
 			#header {
-				font-size: 18px;
+				font-size: 40px;
+				font-weight: 200;
 				color: #333333;
 				text-align: center;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 			}
 
 			#load-paypal-area {
@@ -85,17 +90,34 @@
 			    border: none;
 			    outline: none;
 				border-radius: 1px;
+				transition: background-color 100ms ease-in-out;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 			}
 
 			#load-paypal-button-automatically {
 				flex: 3;
-				background-color: forestgreen;
+				background-color: rgb(23, 167, 25);
 				margin-right: 5px;
+			}
+			#load-paypal-button-automatically:hover {
+				background-color: rgb(43, 193, 45);
+			}
+			#load-paypal-button-automatically:active {
+				background-color: rgb(79, 223, 81);
 			}
 
 			#load-paypal-button-manually {
 				flex: 1;
-				background-color: yellowgreen;
+				background-color: rgb(110, 173, 30);
+			}
+			#load-paypal-button-manually:hover {
+				background-color: rgb(132, 194, 54);
+			}
+			#load-paypal-button-manually:active {
+				background-color: rgb(171, 238, 86);
 			}
 
 			#orchestration-button-container {
@@ -115,11 +137,23 @@
 				padding-left:		20px;
 				text-align:			left;
 				background-color:	#efefef;
+				transition:			background-color 100ms ease-in-out;
 				border:				none;
 				border-radius:		1px;
 				color:				black;
 				outline:			none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 			}
+			.orchestration-button:hover {
+				background-color:	#f4f4f4;
+			}
+			.orchestration-button:active {
+				background-color:	#f8f8f8;
+			}
+
 			#orchestration-button-select-payment-option {
 				color:				#909090;
 			}
@@ -146,6 +180,10 @@
 				font-size: 12px;
 				color: lightslategray;
 				margin-bottom: 2px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 			}
 
 			#paypal-ucc-label-card-number {
@@ -202,10 +240,21 @@
 				font-size: 17px;
 				width: 100%;
 				background-color: #2C2E2F;
+				transition:			background-color 100ms ease-in-out;
 				border: none;
 				border-radius: 4px;
 				color: white;
 				outline: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			#paypal-ucc-submit:hover {
+				background-color: #494a4a;
+			}
+			#paypal-ucc-submit:active {
+				background-color: #5b5b5b;
 			}
 
 			#paypal-sdk-area {
@@ -229,10 +278,12 @@
 					<h1 id="header">Shop Playground</h1>
 				</div>
 
+				<!--
 				<div id="load-paypal-area">
 					<button type="button" class="load-paypal-button" id="load-paypal-button-automatically">Load PayPal Area</button>
 					<button type="button" class="load-paypal-button" id="load-paypal-button-manually">manually</button>
 				</div>
+				-->
 
 				<div id="orchestration-button-container">
 					<button type="button" class="orchestration-button" id="orchestration-button-client-token">1. Retrieve UCC Client Token</button>
@@ -243,7 +294,7 @@
 					<button type="button" class="orchestration-button" id="orchestration-button-activate-paypal-buttons">6. Activate PayPal Buttons</button>
 					<button type="button" class="orchestration-button" id="orchestration-button-select-payment-option" disabled="disabled">7. Select payment option in PayPal SDK</button>
 					<button type="button" class="orchestration-button" id="orchestration-button-finalize-order">8. Finalize Order</button>
-					<button type="button" class="orchestration-button" id="orchestration-button-refund-capture">9. Refund Capture</button>
+					<!-- <button type="button" class="orchestration-button" id="orchestration-button-refund-capture">9. Refund Capture</button> -->
 				</div>
 
 				<div id="paypal-ucc-area">
@@ -288,6 +339,7 @@
 					SDKButtonActions:		null,
 
 					states: {
+						initial:			false,
 						UCCClientToken:		false,
 						orderId:			false,
 						script:				false,
@@ -313,6 +365,42 @@
 
 
 			app.paypal.changeState = _ => {
+				let f = "app.paypal.changeState";
+
+				switch (_) {
+
+					case 'initial':
+						break;
+
+					case 'UCCClientToken':
+						if (app.paypal.states.UCCClientToken && app.paypal.states.orderId) {
+							// TODO load script
+						}
+						break;
+
+					case 'orderId':
+						if (app.paypal.states.UCCClientToken && app.paypal.states.orderId) {
+							// TODO load script
+						}
+						break;
+
+					case 'script':
+						// TODO load both paypalRender and UCCRender simultaneously
+						break;
+
+					case 'paypalRendered':
+						break;
+
+					case 'uccRendered':
+						break;
+
+					case 'activated':
+						break;
+
+					default:
+						console.log(f + ": Invalid state name: ", _);
+						break;
+				}
 			};
 
 
@@ -327,7 +415,7 @@
 					app.paypal.clientToken = _.client_token;
 					console.log(f + ": UCC Client Token retrieved: " + _.client_token.substring( 0, 10 ) + "___" + _.client_token.substring( _.client_token.length - 10, _.client_token.length ));
 				})
-				.catch(_ => { console.log(f + ": Failed to retrieve UCC Client Token: " + _); });
+				.catch(_ => { console.log(f + ": Failed to retrieve UCC Client Token: " + _); console.groupEnd(); });
 			};
 			document.getElementById("orchestration-button-client-token").addEventListener('click', app.paypal.retrieveUCCClientToken);
 
@@ -343,7 +431,7 @@
 					app.paypal.orderId = _.id;
 					console.log(f + ": Retrieved Order Id: " + _.id);
 				})
-				.catch(_ => { console.log(f + ": Failed to retrieve Order Id: " + _); });
+				.catch(_ => { console.log(f + ": Failed to retrieve Order Id: " + _); console.groupEnd(); });
 			};
 			document.getElementById("orchestration-button-create-order").addEventListener('click', app.paypal.retrieveOrderId);
 
@@ -352,7 +440,7 @@
 			app.paypal.loadSDKScript = _ => {
 				let f = 'app.paypal.loadSDKScript';
 				let sdkNode = document.createElement("script");
-				let srcAttribute = 'https://www.paypal.com/sdk/js?client-id=' + _.clientId + '&merchant-id=' + _.merchantId + '&currency=' + _.currency + '&intent=' + _.intent + '&commit=' + _.commit + '&components=' + _.components + '&locale=' + _.locale;
+				let srcAttribute = 'https://www.paypal.com/sdk/js?client-id=' + _.clientId + '&merchant-id=' + _.merchantId + '&currency=' + _.currency + '&intent=' + _.intent + '&commit=' + _.commit + '&components=' + _.components + '&locale=' + _.locale /* + '&disable-funding=' + _['disable-funding'] */;
 
 				sdkNode.setAttribute("type", "text/javascript");
 				sdkNode.setAttribute("data-client-token", _.clientToken);
@@ -374,12 +462,12 @@
 					commit:			"true",
 					components:		"buttons,hosted-fields",
 					locale:			"en_DE"							// NOTE https://developer.paypal.com/docs/checkout/reference/customize-sdk/#locale
-					// buyerCountry: "NL"							// NOTE PayPal Sandbox only - throws error when fetching URL with buyer-country=XX for production https://developer.paypal.com/docs/checkout/reference/customize-sdk/#buyer-country
 					// disable-funding = credit,card,sepa
 					// disable-card=visa,mastercard,amex,discover,jcb,elo,hiper
 					// integration-date=2019-04-03
 					// debug=true / false
 					// vault=true (omit if false, do not use vault=false which throws an error)
+					// buyerCountry: "NL"							// NOTE PayPal Sandbox only - throws error when fetching URL with buyer-country=XX for production https://developer.paypal.com/docs/checkout/reference/customize-sdk/#buyer-country
 				});
 			});
 			document.getElementById("orchestration-button-load-paypal-sdk-script").addEventListener('click', app.paypal.loadSDKScriptDefault);
@@ -533,7 +621,7 @@
 							'input': {
 								'color':				'black',
 								'font-family':			'"Helvetica Neue", sans-serif',
-								'font-size':			'14px',
+								'font-size':			'12px',
 								'transition':			'color 160ms linear',
 								'-webkit-transition':	'color 160ms linear'
 							},
@@ -637,7 +725,7 @@
 					console.log(f, 'Merchant ineligible for UCC. Not rendering UCC area.', {'paypal.HostedFields.isEligible()': paypal.HostedFields.isEligible(), orderId: app.orderId, app: app});
 					// TODO Optionally hide Hosted Fields area (or do not show to begin with, of course)
 				}
-			});
+			};
 			document.getElementById("orchestration-button-render-paypal-ucc").addEventListener('click', app.paypal.renderUCCArea);
 
 
@@ -682,7 +770,7 @@
 
 
 
-			app.paypal.orderCapture = _ => {
+			app.paypal.orderCapture = async _ => {
 				let f = "app.paypal.orderCapture";
 				console.log(f + ": Capturing order (" + app.paypal.orderId + ") ...");
 
@@ -703,7 +791,7 @@
 				let f = "app.paypal.orderRefund";
 				console.log(f + ": Not implemented yet.");
 			};
-			document.getElementById("orchestration-button-refund-capture").addEventListener('click', app.paypal.orderRefund);
+			// document.getElementById("orchestration-button-refund-capture").addEventListener('click', app.paypal.orderRefund);
 
 
 
