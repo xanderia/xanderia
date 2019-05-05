@@ -14,9 +14,8 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 export default class ConfigurationScreen extends React.Component {
-	static navigationOptions = {
-		header: null,
-	};
+	static navigationOptions = ({ navigation, navigationOptions, screenProps }) => {
+	}
 
 	onPressPaymentFlowButton = async () => {
 		console.log("PaymentTestScreen::onPressPaymentFlowButton() start");

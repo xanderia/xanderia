@@ -1,0 +1,15 @@
+
+const m = moment.utc();
+const md = moment(Date.now());
+m.toISOString()	-> 2019-04-08T09:46:43.781Z
+m.valueOf()		-> 1554716803781
+m.toDate()		-> Date() object
+
+https://momentjs.com/docs/#/parsing/moment-clone/
+let newMoment = oldMoment.clone()
+let newMoment = moment.utc(oldMoment)
+
+
+https://momentjs.com/docs/#/manipulating/add/
+.add(7, "days")
+.subtract(5, "hours")

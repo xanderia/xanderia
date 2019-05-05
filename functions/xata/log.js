@@ -6,18 +6,6 @@ let firebaseAdmin = false;
 
 
 
-///////////////////////////////////////////////////
-// Moment Cheat Sheet
-// ==================
-// const m = moment();
-// const md = moment(Date.now());
-// m.toISOString()	-> 2019-04-08T09:46:43.781Z
-// m.valueOf()		-> 1554716803781
-// m.toDate()		-> Date() object
-///////////////////////////////////////////////////
-
-
-
 const severityLevels = {
 	"0": {number: 0,	name: "meaningless",	expiration: "P2D",		notification: "none",			description: "",	example: ""},
 
@@ -46,8 +34,14 @@ const createEvent = async (_) => {
 	return db.collection("logs.events").add(_);
 };
 
-const createUniversalEvent = async (time, eventIds = []) => {
-	return db.collection("logs.universal-events").add({eventIds, time: time });
+const createUniversalEvent = async (momentNow, eventIds = []) => {
+	return db.collection("logs.universal-events").add({
+		eventIds,
+
+		timeFirebase:		firebaseAdmin.firestore.Timestamp.fromDate(momentNow.toDate()),
+		timeISO:			momentNow.toISOString(),
+		timeMilliseconds:	momentNow.valueOf()
+	});
 };
 
 const addUniversalEventIdsToEvent = async (eventDocId, universalEventIds) => {
@@ -56,12 +50,12 @@ const addUniversalEventIdsToEvent = async (eventDocId, universalEventIds) => {
 
 const add = async (_) => {
 	let f = "xata.log.add";
-	let momentNow = moment();
-	let momentNowFirebase = firebaseAdmin.firestore.Timestamp.fromDate(momentNow.toDate());
+	let momentNow = moment.utc();
 
 	let logData = {
-		timestamp:			momentNowFirebase,
-		time:				momentNow.toISOString(),
+		timeFirebase:		firebaseAdmin.firestore.Timestamp.fromDate(momentNow.toDate()),
+		timeISO:			momentNow.toISOString(),
+		timeMilliseconds:	momentNow.valueOf(),
 
 		data:				_.data				|| {_: "No logging data was provided."},
 		severity:			_.severity			|| 0,
@@ -76,7 +70,7 @@ const add = async (_) => {
 		let eventDoc = await createEvent(logData);
 
 		if (logData.universalEvents.length === 0) {
-			let universalEventDoc = await createUniversalEvent(momentNowFirebase, [eventDoc.id]);
+			let universalEventDoc = await createUniversalEvent(momentNow, [eventDoc.id]);
 			logData.universalEvents = [universalEventDoc.id];
 		}
 		await addUniversalEventIdsToEvent(eventDoc.id, logData.universalEvents);

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
 	Button,
@@ -11,21 +12,20 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
-import { MonoText } from '../components/StyledText';
+// 🅳🅴🅻🅴🆃🅴 import { MonoText } from '../components/StyledText';
+
+
 
 export default class CheckoutScreen extends React.Component {
-	static navigationOptions = {
-		header: null,
-	};
+	static navigationOptions = ({ navigation, navigationOptions, screenProps }) => {
+	}
 
-	onPressPaymentFlowButton = async () => {
-		let f = "PaymentTestScreen::onPressPaymentFlowButton()";
-		console.log(f, ":start", {window: window, document: document});
-		let windowReference = window.open("https://xanderia.one", "", "menubar=no,location=no,resizable=no,scrollbars=yes,status=no,width=624,height=968,bottom=0,left=0"); // height +22
-		//let result = await WebBrowser.openBrowserAsync('https://expo.io');
-		console.log(f, ":end");
-		//this.setState({ result });
-	};
+	componentDidMount() {
+		console.log("CheckoutScreen.componentDidMount(): started", {"this.props": this.props});
+		this.props.navigation.setParams({ auth: "myauth" });
+	}
+
+
 
 	render() {
 		return (
@@ -39,8 +39,6 @@ export default class CheckoutScreen extends React.Component {
 						<Text style={styles.getStartedText}>
 							PayPal Payment Test
 						</Text>
-
-						<Button style={styles.paragraph} title="Open WebBrowser" onPress={this.onPressPaymentFlowButton} />
 					</View>
 
 				</ScrollView>

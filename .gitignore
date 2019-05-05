@@ -61,7 +61,7 @@ typings/
 .next
 
 # Firebase
-functions/xanderia-e7b8f-firebase-adminsdk-nhxqs-d7c63cc86d.json
+functions/config/xanderia-e7b8f-firebase-adminsdk-nhxqs-d7c63cc86d.json
 .firebaserc
 firebase.json
 firestore.indexes.json
@@ -70,4 +70,7 @@ storage.rules
 .firebase/*.cache
 
 # PayPal Credentials
-functions/paypal-credentials.json
+functions/config/paypal-credentials.json
+functions/config/google-credentials.js
+
+notes/google-auth-credentials.txt

@@ -1,0 +1,16 @@
+{
+	"calendar": "https://www.googleapis.com/auth/calendar",
+	"tasks": "https://www.googleapis.com/auth/tasks",
+	"google-docs": "https://www.googleapis.com/auth/documents",
+	"google-sheets": "https://www.googleapis.com/auth/spreadsheets",
+	"google-slides": "https://www.googleapis.com/auth/presentations",
+	"google-drive": "https://www.googleapis.com/auth/drive",
+	"google-mail.insert": "https://www.googleapis.com/auth/gmail.insert",
+	"profile": "profile",
+	"email": "email",
+	"openid": "openid",
+	"oauth2.email": "https://www.googleapis.com/auth/userinfo.email",
+	"oauth2.profile": "https://www.googleapis.com/auth/userinfo.profile",
+	"contacts": "https://www.googleapis.com/auth/contacts",
+	"youtube": "https://www.googleapis.com/auth/youtube"
+}

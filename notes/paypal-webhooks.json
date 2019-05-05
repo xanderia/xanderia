@@ -1,0 +1,239 @@
+{
+	"uWuTkHXqT6uJJDRPEZ9r": {
+        "keep": "special",
+        "severity": 1,
+        "origin": "paypal.webhook",
+        "time": "2019-04-11T14:44:33.355Z",
+        "timestamp": {
+            "_seconds": 1554993873,
+            "_nanoseconds": 355000000
+        },
+        "location": "functions.paypalWebhooks",
+        "apps": [
+            "shop-playground"
+        ],
+        "data": {
+            "checks": {
+                "verification": {
+                    "cryptoResultType": "boolean",
+                    "expectedSignature": "239fa510-5c68-11e9-8340-299168e1093a|2019-04-11T14:43:15Z|WH-4PK571362W464073U-5K82050656165125A|4123572221",
+                    "cryptoResultJSON": "false"
+                },
+                "items": [
+                    {
+                        "value": "https",
+                        "match": true,
+                        "name": "request.protocol",
+                        "example": "https",
+                        "regexp": "^https$"
+                    },
+                    {
+                        "name": "request.headers[\"content-type\"]",
+                        "example": "application/json",
+                        "regexp": "^application/json$",
+                        "value": "application/json",
+                        "match": true
+                    },
+                    {
+                        "value": "d88953b8c32ca",
+                        "match": true,
+                        "name": "request.headers[\"correlation-id\"]",
+                        "example": "30efdeb037e68",
+                        "regexp": "^[0-9a-z]{13}$"
+                    },
+                    {
+                        "value": "173.0.81.33",
+                        "match": true,
+                        "name": "request.headers[\"fastly-client-ip\"]",
+                        "example": "173.0.81.33",
+                        "regexp": "^(66.211.170.66|173.0.81.1|173.0.81.33|173.0.81.[0-9]{1,3})$"
+                    },
+                    {
+                        "value": "SHA256withRSA",
+                        "match": true,
+                        "name": "request.headers[\"paypal-auth-algo\"]",
+                        "example": "SHA256withRSA",
+                        "regexp": "^SHA256withRSA$"
+                    },
+                    {
+                        "name": "request.headers[\"paypal-auth-version\"]",
+                        "example": "v2",
+                        "regexp": "^v2$",
+                        "value": "v2",
+                        "match": true
+                    },
+                    {
+                        "value": "https://api.paypal.com/v1/notifications/certs/CERT-360caa42-fca2a594-5edc0ebc",
+                        "match": true,
+                        "name": "request.headers[\"paypal-cert-url\"]",
+                        "example": "https://api.paypal.com/v1/notifications/certs/CERT-360caa42-fca2a594-8079afec",
+                        "regexp": "^https://(?:[a-z.-]*.)?paypal.com/.+$"
+                    },
+                    {
+                        "value": "239fa510-5c68-11e9-8340-299168e1093a",
+                        "match": true,
+                        "name": "request.headers[\"paypal-transmission-id\"]",
+                        "example": "43d1e650-589d-11e9-9197-9f995c1285cf",
+                        "regexp": "^[0-9a-z-]{36}$"
+                    },
+                    {
+                        "value": "2019-04-11T14:43:15Z",
+                        "match": true,
+                        "name": "request.headers[\"paypal-transmission-time\"]",
+                        "example": "2019-04-06T18:53:28Z",
+                        "regexp": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+                    },
+                    {
+                        "name": "request.headers[\"paypal-transmission-sig\"]",
+                        "example": "kDwqwLY6RzwAJf10Qwdk7GESbSEP6MdTAnp9Dt/o0vQz+babKzCwmrfi/H0l8G1K9fyWBrZ0MdKDNjskZreysQsobh4PiZ9cgPC+ZodezByQMeRi3wQ/Cj/rokuX2AYlCLeVXh/+okXxfwxVxoCm7ZFPC2E3Mj0fSe0J3iRwezdH2eEy4kONm9VbAW/PAckfIIlLkw7IqxR97gIVMO1B5YAHnEiGZdeLRFeeepjDvmI7PAtw347KfkUMEI+1MPyj/mXYXhgB6Ui4bjfZ5C3lYB3YLs5XverW2jNcaLp4EYgSl+Wl/Qv3mKiR3YRQ2hVq2SXnrHhoX+OTGR14DrbV1g==",
+                        "regexp": "^[0-9a-zA-Z/+=]+$",
+                        "value": "ayRQkkfbPIAhd6WwKXvKXUcIJHSe0gmt/l8EOI1wGJ2Khcl189S17ac04SyDLoL5qEIJm9r1uJ0i7YAmmaw8jRQhzH3ggCMW2huO4XKXxuw9Sanwh5LLOqffDboSjGrzTv/K5+aPq3Sb5OdbZKeTPK7j0rCNsqyZDGCkwMg6iA2KZJkiCkS7rAm9Z4cNAVMcNuEei1HLBtEJ74x9PBRe9ZhSx+c7h/sOQknvrxPOdwNn843MUYqtFLi59lZdGIn10WImbdb+69jQXDxGWhbvy5hVw9Wp+8BrjXdEkep0kGBVGwOGgWEE/sXDEQZ2EjTH/vjEMN2Hf0xhl6OULUSqag==",
+                        "match": true
+                    },
+                    {
+                        "value": "WH-4PK571362W464073U-5K82050656165125A",
+                        "match": true,
+                        "name": "request.body.id",
+                        "example": "WH-50R7428051403842W-0PJ14460PF4449425",
+                        "regexp": "^WH-[A-Z0-9]{17}-[A-Z0-9]{17}$"
+                    },
+                    {
+                        "value": "PAYMENT.CAPTURE.COMPLETED",
+                        "match": true,
+                        "name": "request.body.event_type",
+                        "example": "PAYMENT.CAPTURE.COMPLETED",
+                        "regexp": "^[A-Z][A-Z.]+[A-Z]$"
+                    }
+                ],
+                "metadata": {
+                    "numberOfChecks": 12,
+                    "numberOfSuccessfulChecks": 12,
+                    "numberOfFailedChecks": 0
+                }
+            },
+            "bodyRaw": "{\"id\":\"WH-4PK571362W464073U-5K82050656165125A\",\"event_version\":\"1.0\",\"create_time\":\"2019-04-11T14:43:15.364Z\",\"resource_type\":\"capture\",\"resource_version\":\"2.0\",\"event_type\":\"PAYMENT.CAPTURE.COMPLETED\",\"summary\":\"Payment completed for EUR 0.01 EUR\",\"resource\":{\"id\":\"9U978998MT8319727\",\"amount\":{\"currency_code\":\"EUR\",\"value\":\"0.01\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"NOT_ELIGIBLE\"},\"disbursement_mode\":\"INSTANT\",\"seller_receivable_breakdown\":{\"gross_amount\":{\"currency_code\":\"EUR\",\"value\":\"0.01\"},\"paypal_fee\":{\"currency_code\":\"EUR\",\"value\":\"0.01\"},\"net_amount\":{\"currency_code\":\"EUR\",\"value\":\"0.00\"}},\"status\":\"COMPLETED\",\"create_time\":\"2019-04-11T14:43:09Z\",\"update_time\":\"2019-04-11T14:43:09Z\",\"links\":[{\"href\":\"https://api.paypal.com/v2/payments/captures/9U978998MT8319727\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://api.paypal.com/v2/payments/captures/9U978998MT8319727/refund\",\"rel\":\"refund\",\"method\":\"POST\"},{\"href\":\"https://api.paypal.com/v2/checkout/orders/6E697281Y9734790G\",\"rel\":\"up\",\"method\":\"GET\"}]},\"links\":[{\"href\":\"https://api.paypal.com/v1/notifications/webhooks-events/WH-4PK571362W464073U-5K82050656165125A\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://api.paypal.com/v1/notifications/webhooks-events/WH-4PK571362W464073U-5K82050656165125A/resend\",\"rel\":\"resend\",\"method\":\"POST\"}]}",
+			"bodyRaw2": "{"id":"WH-4PK571362W464073U-5K82050656165125A","event_version":"1.0","create_time":"2019-04-11T14:43:15.364Z","resource_type":"capture","resource_version":"2.0","event_type":"PAYMENT.CAPTURE.COMPLETED","summary":"Payment completed for EUR 0.01 EUR","resource":{"id":"9U978998MT8319727","amount":{"currency_code":"EUR","value":"0.01"},"final_capture":true,"seller_protection":{"status":"NOT_ELIGIBLE"},"disbursement_mode":"INSTANT","seller_receivable_breakdown":{"gross_amount":{"currency_code":"EUR","value":"0.01"},"paypal_fee":{"currency_code":"EUR","value":"0.01"},"net_amount":{"currency_code":"EUR","value":"0.00"}},"status":"COMPLETED","create_time":"2019-04-11T14:43:09Z","update_time":"2019-04-11T14:43:09Z","links":[{"href":"https://api.paypal.com/v2/payments/captures/9U978998MT8319727","rel":"self","method":"GET"},{"href":"https://api.paypal.com/v2/payments/captures/9U978998MT8319727/refund","rel":"refund","method":"POST"},{"href":"https://api.paypal.com/v2/checkout/orders/6E697281Y9734790G","rel":"up","method":"GET"}]},"links":[{"href":"https://api.paypal.com/v1/notifications/webhooks-events/WH-4PK571362W464073U-5K82050656165125A","rel":"self","method":"GET"},{"href":"https://api.paypal.com/v1/notifications/webhooks-events/WH-4PK571362W464073U-5K82050656165125A/resend","rel":"resend","method":"POST"}]}",
+            "query": {},
+            "hostname": "xanderia.one",
+            "body": {
+                "resource": {
+                    "id": "9U978998MT8319727",
+                    "disbursement_mode": "INSTANT",
+                    "final_capture": true,
+                    "seller_receivable_breakdown": {
+                        "net_amount": {
+                            "value": "0.00",
+                            "currency_code": "EUR"
+                        },
+                        "paypal_fee": {
+                            "value": "0.01",
+                            "currency_code": "EUR"
+                        },
+                        "gross_amount": {
+                            "value": "0.01",
+                            "currency_code": "EUR"
+                        }
+                    },
+                    "update_time": "2019-04-11T14:43:09Z",
+                    "status": "COMPLETED",
+                    "create_time": "2019-04-11T14:43:09Z",
+                    "amount": {
+                        "value": "0.01",
+                        "currency_code": "EUR"
+                    },
+                    "links": [
+                        {
+                            "method": "GET",
+                            "rel": "self",
+                            "href": "https://api.paypal.com/v2/payments/captures/9U978998MT8319727"
+                        },
+                        {
+                            "method": "POST",
+                            "rel": "refund",
+                            "href": "https://api.paypal.com/v2/payments/captures/9U978998MT8319727/refund"
+                        },
+                        {
+                            "method": "GET",
+                            "rel": "up",
+                            "href": "https://api.paypal.com/v2/checkout/orders/6E697281Y9734790G"
+                        }
+                    ],
+                    "seller_protection": {
+                        "status": "NOT_ELIGIBLE"
+                    }
+                },
+                "resource_version": "2.0",
+                "event_type": "PAYMENT.CAPTURE.COMPLETED",
+                "create_time": "2019-04-11T14:43:15.364Z",
+                "resource_type": "capture",
+                "links": [
+                    {
+                        "method": "GET",
+                        "rel": "self",
+                        "href": "https://api.paypal.com/v1/notifications/webhooks-events/WH-4PK571362W464073U-5K82050656165125A"
+                    },
+                    {
+                        "method": "POST",
+                        "rel": "resend",
+                        "href": "https://api.paypal.com/v1/notifications/webhooks-events/WH-4PK571362W464073U-5K82050656165125A/resend"
+                    }
+                ],
+                "id": "WH-4PK571362W464073U-5K82050656165125A",
+                "event_version": "1.0",
+                "summary": "Payment completed for EUR 0.01 EUR"
+            },
+            "ip": "35.193.181.251",
+            "protocol": "https",
+            "verificationStatus": "unverified",
+            "headers": {
+                "fastly-temp-xff": "173.0.81.33, 173.0.81.33",
+                "x-varnish": "3680770969",
+                "paypal-transmission-id": "239fa510-5c68-11e9-8340-299168e1093a",
+                "fastly-ssl": "1",
+                "x-appengine-region": "?",
+                "correlation-id": "d88953b8c32ca",
+                "x-appengine-request-log-id": "5caf52cf00ff05340dfbf158d40001737e74346434373565353935643763326132312d7470000166653236366536666366376133323532306438613839363434646461333331323a3338000100",
+                "x-forwarded-proto": "https",
+                "paypal-auth-algo": "SHA256withRSA",
+                "x-forwarded-host": "xanderia.one",
+                "paypal-auth-version": "v2",
+                "x-forwarded-url": "/webhooks/paypal",
+                "accept": "*/*",
+                "cdn-loop": "Fastly",
+                "content-type": "application/json",
+                "x-appengine-citylatlong": "0.000000,0.000000",
+                "transfer-encoding": "chunked",
+                "x-appengine-default-version-hostname": "t4d475e595d7c2a21-tp.appspot.com",
+                "x-forwarded-server": "cache-pao17430-PAO",
+                "x-appengine-api-ticket": "aed9c8261b22a97c",
+                "x-appengine-country": "US",
+                "user-agent": "PayPal/AUHR-214.0-51787073",
+                "fastly-client-ip": "173.0.81.33",
+                "x-appengine-user-ip": "35.193.181.251",
+                "pragma": "no-cache",
+                "x-appengine-https": "on",
+                "x-real-ip": "157.52.76.30",
+                "function-execution-id": "nrhtvbrxyxom",
+                "paypal-transmission-time": "2019-04-11T14:43:15Z",
+                "fastly-ff": "s48hDkrIORDrAz3sjuyh5gIWcInqIjSROZ47KAY+w/I=!PAO!cache-pao17430-PAO",
+                "cache-control": "no-cache, no-store",
+                "paypal-cert-url": "https://api.paypal.com/v1/notifications/certs/CERT-360caa42-fca2a594-5edc0ebc",
+                "x-forwarded-for": "35.193.181.251",
+                "x-cloud-trace-context": "0e268e394e8aac1bf7d5420741e2d33f/3294101413135232279;o=1",
+                "x-timer": "S1554993871.219491,VS0",
+                "accept-encoding": "gzip",
+                "host": "us-central1-xanderia-e7b8f.cloudfunctions.net",
+                "x-nginx-proxy": "true",
+                "x-appengine-city": "?",
+                "paypal-transmission-sig": "ayRQkkfbPIAhd6WwKXvKXUcIJHSe0gmt/l8EOI1wGJ2Khcl189S17ac04SyDLoL5qEIJm9r1uJ0i7YAmmaw8jRQhzH3ggCMW2huO4XKXxuw9Sanwh5LLOqffDboSjGrzTv/K5+aPq3Sb5OdbZKeTPK7j0rCNsqyZDGCkwMg6iA2KZJkiCkS7rAm9Z4cNAVMcNuEei1HLBtEJ74x9PBRe9ZhSx+c7h/sOQknvrxPOdwNn843MUYqtFLi59lZdGIn10WImbdb+69jQXDxGWhbvy5hVw9Wp+8BrjXdEkep0kGBVGwOGgWEE/sXDEQZ2EjTH/vjEMN2Hf0xhl6OULUSqag=="
+            },
+            "headersRaw": "{\"host\":\"us-central1-xanderia-e7b8f.cloudfunctions.net\",\"user-agent\":\"PayPal/AUHR-214.0-51787073\",\"transfer-encoding\":\"chunked\",\"accept\":\"*/*\",\"cache-control\":\"no-cache, no-store\",\"cdn-loop\":\"Fastly\",\"content-type\":\"application/json\",\"correlation-id\":\"d88953b8c32ca\",\"fastly-client-ip\":\"173.0.81.33\",\"fastly-ff\":\"s48hDkrIORDrAz3sjuyh5gIWcInqIjSROZ47KAY+w/I=!PAO!cache-pao17430-PAO\",\"fastly-ssl\":\"1\",\"fastly-temp-xff\":\"173.0.81.33, 173.0.81.33\",\"function-execution-id\":\"nrhtvbrxyxom\",\"paypal-auth-algo\":\"SHA256withRSA\",\"paypal-auth-version\":\"v2\",\"paypal-cert-url\":\"https://api.paypal.com/v1/notifications/certs/CERT-360caa42-fca2a594-5edc0ebc\",\"paypal-transmission-id\":\"239fa510-5c68-11e9-8340-299168e1093a\",\"paypal-transmission-sig\":\"ayRQkkfbPIAhd6WwKXvKXUcIJHSe0gmt/l8EOI1wGJ2Khcl189S17ac04SyDLoL5qEIJm9r1uJ0i7YAmmaw8jRQhzH3ggCMW2huO4XKXxuw9Sanwh5LLOqffDboSjGrzTv/K5+aPq3Sb5OdbZKeTPK7j0rCNsqyZDGCkwMg6iA2KZJkiCkS7rAm9Z4cNAVMcNuEei1HLBtEJ74x9PBRe9ZhSx+c7h/sOQknvrxPOdwNn843MUYqtFLi59lZdGIn10WImbdb+69jQXDxGWhbvy5hVw9Wp+8BrjXdEkep0kGBVGwOGgWEE/sXDEQZ2EjTH/vjEMN2Hf0xhl6OULUSqag==\",\"paypal-transmission-time\":\"2019-04-11T14:43:15Z\",\"pragma\":\"no-cache\",\"x-appengine-api-ticket\":\"aed9c8261b22a97c\",\"x-appengine-city\":\"?\",\"x-appengine-citylatlong\":\"0.000000,0.000000\",\"x-appengine-country\":\"US\",\"x-appengine-default-version-hostname\":\"t4d475e595d7c2a21-tp.appspot.com\",\"x-appengine-https\":\"on\",\"x-appengine-region\":\"?\",\"x-appengine-request-log-id\":\"5caf52cf00ff05340dfbf158d40001737e74346434373565353935643763326132312d7470000166653236366536666366376133323532306438613839363434646461333331323a3338000100\",\"x-appengine-user-ip\":\"35.193.181.251\",\"x-cloud-trace-context\":\"0e268e394e8aac1bf7d5420741e2d33f/3294101413135232279;o=1\",\"x-forwarded-for\":\"35.193.181.251\",\"x-forwarded-host\":\"xanderia.one\",\"x-forwarded-proto\":\"https\",\"x-forwarded-server\":\"cache-pao17430-PAO\",\"x-forwarded-url\":\"/webhooks/paypal\",\"x-nginx-proxy\":\"true\",\"x-real-ip\":\"157.52.76.30\",\"x-timer\":\"S1554993871.219491,VS0\",\"x-varnish\":\"3680770969\",\"accept-encoding\":\"gzip\"}"
+        },
+        "services": [
+            "paypal"
+        ],
+        "universalEvents": [
+            "5HU2kjAjMt9OVy1xccBZ"
+        ]
+    }
+}

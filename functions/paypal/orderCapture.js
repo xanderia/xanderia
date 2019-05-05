@@ -8,8 +8,8 @@ const functions 		= require('firebase-functions');
 const firebaseAdmin		= require('firebase-admin');
 const accessTokenFirstParty = require("./accessTokenFirstParty");
 
-var firebaseCredentials	= require("../xanderia-e7b8f-firebase-adminsdk-nhxqs-d7c63cc86d.json");
-const paypalCredentials	= require("../paypal-credentials.json");
+var firebaseCredentials	= require("../config/xanderia-e7b8f-firebase-adminsdk-nhxqs-d7c63cc86d.json");
+const paypalCredentials	= require("../config/paypal-credentials.json");
 
 
 
@@ -20,7 +20,7 @@ module.exports = functions.https.onRequest((request, response) => {
 	let f = "functions.paypalOrderCapture";
 	let uuid4 = uuid();
 
-	
+
 
 	if (! firebaseAdmin.apps.length) {
 		firebaseAdmin.initializeApp({credential: firebaseAdmin.credential.cert(firebaseCredentials), databaseURL: "https://xanderia-e7b8f.firebaseio.com" });

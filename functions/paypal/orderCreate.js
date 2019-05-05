@@ -8,8 +8,8 @@ const functions 		= require('firebase-functions');
 const firebaseAdmin		= require('firebase-admin');
 const accessTokenFirstParty = require("./accessTokenFirstParty");
 
-var firebaseCredentials	= require("../xanderia-e7b8f-firebase-adminsdk-nhxqs-d7c63cc86d.json");
-const paypalCredentials	= require("../paypal-credentials.json");
+var firebaseCredentials	= require("../config/xanderia-e7b8f-firebase-adminsdk-nhxqs-d7c63cc86d.json");
+const paypalCredentials	= require("../config/paypal-credentials.json");
 
 
 
@@ -103,8 +103,10 @@ module.exports = functions.https.onRequest(async (request, response) => {
 					"payer_selected":			"PAYPAL",		// VALUES or CREDIT, ... SEPA? IDEAL? BANCONTACT? P24?
 					"payee_preferred":			"UNRESTRICTED"	// NOTE or IMMEDIATE_PAYMENT_REQUIRED
 				},
-				"return_url":					"https://www.example.org/paypal",	// NOTE On dev_.paypal.com: https://xanderia.one/shop-playground?origin=paypal-checkout-return
-				"cancel_url":					"https://www.example.org/paypal?error=customer-cancel" // NOTE Do _not_ url-encode this, e.g. error%3Dcancel. Simply use the plain form.
+
+				// NOTE Forbidden for Payment SDK
+				// "return_url":					"https://www.example.org/paypal",	// NOTE On dev_.paypal.com: https://xanderia.one/shop-playground?origin=paypal-checkout-return
+				// "cancel_url":					"https://www.example.org/paypal?error=customer-cancel" // NOTE Do _not_ url-encode this, e.g. error%3Dcancel. Simply use the plain form.
 			}
 
 		})

@@ -78,7 +78,7 @@
     "no-throw-literal": 2,
 
     // Require using Error objects as Promise rejection reasons
-    "prefer-promise-reject-errors": 2,
+    "prefer-promise-reject-errors": 0,
 
     // Enforce “for” loop update clause moving the counter in the right direction
     "for-direction": 2,
@@ -120,6 +120,8 @@
     // Warn against nested then() or catch() statements
     "promise/no-nesting": 0,
 
-	"no-useless-escape": 0
+	"no-useless-escape": 0,
+    "no-irregular-whitespace": 0,
+    "no-empty": 0
   }
 }

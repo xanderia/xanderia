@@ -14,9 +14,8 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 export default class CheckoutScreen extends React.Component {
-	static navigationOptions = {
-		header: null,
-	};
+	static navigationOptions = ({ navigation, navigationOptions, screenProps }) => {
+	}
 
 	onPressPaymentFlowButton = async () => {
 		console.log("PaymentTestScreen::onPressPaymentFlowButton() start");
@@ -39,7 +38,13 @@ export default class CheckoutScreen extends React.Component {
 							PayPal Payment Test
 						</Text>
 
-						<Button style={styles.paragraph} title="Open WebBrowser" onPress={this.onPressPaymentFlowButton} />
+						<Text>PayPal partner account.</Text>
+						<Text>Client ID: |_________|</Text>
+						<Text>Client Secret: |_________|</Text>
+						<Text>TODO: Add Webhook to this account</Text>
+						<Text>TODO: Let PayPal configure account for ISU</Text>
+						<Text>[ Link PayPal merchant account ]</Text>
+						<Text>Merchant Account information</Text>
 					</View>
 
 				</ScrollView>
