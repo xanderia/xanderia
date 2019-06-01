@@ -69,6 +69,7 @@ firestore.rules
 storage.rules
 .firebase/*.cache
 apps/shop-playground/firebase-config.js
+apps/shop-playground/firebase-credentials.js
 
 # PayPal Credentials
 functions/config/paypal-credentials.json

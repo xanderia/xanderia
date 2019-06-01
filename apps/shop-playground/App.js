@@ -11,7 +11,7 @@ import log from "./xata/log";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-import firebaseConfig from "./firebase-config";
+import firebaseConfig from "./firebase-credentials";
 firebase.initializeApp(firebaseConfig);
 
 import { useScreens } from 'react-native-screens';
