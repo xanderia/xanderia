@@ -1,6 +1,6 @@
 
 export default {
-	apiKey:				"AIzaSyADvagzOUxQd_GOAxKSwxF7JlIdBy3i-tI",
+	apiKey:				"===",
 	authDomain:			"xanderia-e7b8f.firebaseapp.com",
 	databaseURL:		"https://xanderia-e7b8f.firebaseio.com",
 	projectId:			"xanderia-e7b8f",
