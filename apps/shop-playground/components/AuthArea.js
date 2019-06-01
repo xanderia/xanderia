@@ -13,6 +13,7 @@ import {
 
 import XATAContext from "../xata/context";
 import auth from "../xata/auth";
+import log from "../xata/log";
 
 
 
@@ -20,38 +21,44 @@ export default class AuthArea extends React.Component {
 
 	constructor (props) {
 		super(props);
-		console.log("AuthArea.constructor(): started");
 	}
 
-	// 🆃🅾🅳🅾 Redirect should show loading animation within the button
-	// 🆃🅾🅳🅾 Externalize Google Auth flow
+
+
 	onPress() {
-		const f = "AuthArea.onPress()";
-		console.log(f + ": started", {"this": this, auth: auth});
+		let f = {
+			name: "AuthArea.onPress()",
+			_this: this,
+			_auth: auth,
+			authFlowResult: null
+		};
 
-		// TODO put this into react `context` and do this centrally
-
-		let authFlowResult = auth.startAuthFlow({authProvider: "google"});
-		console.log(f + ": authFlowResult", {authFlowResult: authFlowResult});
+		f.authFlowResult = auth.startAuthFlow({authProvider: "google"});												// TODO put this into react `context` and do this centrally
+		log.c(f);
 	}
 
-	render() {
-		console.log("AuthArea.render(): started");
 
-		let auth = null;
+
+	render() {																											// TODO Redirect should show loading animation within the button
+
+		let f = {
+			name: "AuthArea.render()",
+			context: null
+		};
 
 		return (
 			<View style={s.MainView}>
 				<TouchableOpacity onPress={this.onPress} style={s.LoginButton}>
 					<XATAContext.Consumer>{_ => {
-							if (_.firebaseAuth !== null) {
+							f.context = _;
+							log.c(f);
+							if (_.firebaseAuthCompleted === true && _.firebaseAuth !== null && _.firebaseAuth.isAnonymous === false) {
 								return (<Text style={s.LoginText}>My Username</Text>);
 							} else {
 								return (<Text style={s.LoginText}>Login</Text>);
 							}
 						}}
         			</XATAContext.Consumer>
-
 				</TouchableOpacity>
 			</View>
 		);
@@ -83,7 +90,7 @@ const s = StyleSheet.create({
 		height:				"35px",
 		width:				"80px",
 
-		backgroundColor:	"hsla(94, 78%, 57%, 1)"
+		// backgroundColor:	"hsla(94, 78%, 57%, 1)"
 	},
 
 	LoginText: {
@@ -92,6 +99,6 @@ const s = StyleSheet.create({
 		marginTop:			"auto",
 		marginBottom:		"auto",
 
-		backgroundColor:	"hsla(93, 57%, 23%, 1)"
+		// backgroundColor:	"hsla(93, 57%, 23%, 1)"
 	}
 });

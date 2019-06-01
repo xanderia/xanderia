@@ -11,9 +11,10 @@ import {
 	View,
 } from 'react-native';
 
+import log from "../xata/log";
+
 import { Svg } from 'expo';
 // const { G, Circle, Rect } = Svg;
-
 import AuthArea from "../components/AuthArea";
 
 
@@ -27,8 +28,11 @@ import AuthArea from "../components/AuthArea";
 
 export default class HeaderBar extends React.Component {
 	render() {
-		console.log("HeaderBar.render(): started");
-		console.log("Use this console filter: -PanGestureHandler -[Violation] -Animation");
+		let f = {
+			name: "HeaderBar.render()"
+		};
+
+		log.c(f);
 
 		return (
 			<View style={s.MainView}>

@@ -1,0 +1,31 @@
+{
+  "background_color": "#ffffff",
+  "description": "A Neat Expo App",
+  "dir": "auto",
+  "display": "standalone",
+  "lang": "en",
+  "name": "Shop Playground",
+  "orientation": "portrait",
+  "prefer_related_applications": true,
+  "related_applications": [],
+  "short_name": "Shop Playground",
+  "start_url": ".",
+  "theme_color": "#4630EB",
+  "icons": [
+    {
+      "src": "/shop-playground/assets/icons/icon_180x180.c3850292a0b45b53fa95eecfb5ef4ee5.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/shop-playground/assets/icons/icon_192x192.76332cb067bda20ca435095f5b11efb9.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/shop-playground/assets/icons/icon_512x512.ffb40d5f2a96e0636f4938be2daf00ee.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

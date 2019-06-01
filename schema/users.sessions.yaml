@@ -1,0 +1,32 @@
+
+# in Atom: ALT+O opens the Outline View
+
+_xiaTimeCreatedFirebase: "..."
+_xiaTimeCreatedMilliseconds: "..."
+_xiaTimeCreatedUTC: "..."
+
+_xiaTimeModifiedFirebase: "..."
+_xiaTimeModifiedMilliseconds: "..."
+_xiaTimeModifiedUTC: "..."
+
+_xiaStatus: "active" # / "deleted" / "marked_for_deletion" / ...
+
+services:
+    auth:
+        _: "more"
+
+    tracking:
+        _: "more"
+
+apps:
+    calendar:
+        _: "more"
+
+    chat:
+        _: "more"
+
+    friends:
+        _: "more"
+
+    shopPlayground:
+        _: "more"

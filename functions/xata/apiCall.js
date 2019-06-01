@@ -39,9 +39,9 @@ const invoke = _ => new Promise(async resolve => {
 				bodyJSON: 		null
 			},
 			timing: {
-				start:		{},
-				end:		{},
-				duration:	{}
+				start:			{},
+				end:			{},
+				duration:		{}
 			}
 		}
 	};

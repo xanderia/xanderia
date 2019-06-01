@@ -33,6 +33,58 @@ const api = {
 
 
 
+exports.loginFinish = async _ => {
+	let $ = {
+		name:								"xata.authGoogle.loginFinish",
+		config: {
+		},
+		input: {
+		},
+		output: {
+		},
+		data: {
+			error:							false,
+			apiCalls: {
+				googleLoginFinish: {
+					request: {
+						url:				"https://www.googleapis.com/oauth2/v4/token",
+						method:				"POST",
+						headers: {
+											"Content-Type":	"application/x-www-form-urlencoded",
+											"Accept":		"application/json"
+						},
+						body:				queryString.stringify({
+							code:			request.query.code,
+							client_id:		googleCredentials.clientId,
+							client_secret:	googleCredentials.clientSecret,
+							grant_type:		"authorization_code",
+							redirect_uri:	"https://xanderia.one/login/google/finish"
+											})
+					},
+					result:					null,
+					response: {
+						status: 			null,
+						headers:			{},
+						headersRaw:			null,
+						body:				{},
+						bodyRaw:			null
+					}
+				}
+			}
+		},
+		timing: {
+		}
+	};
+
+
+	$.data.apiCalls.googleLoginFinish.result = apiCall.invoke({
+	});
+	// if (f.data.apiCalls.googleRefreshToken.response.body.error === "invalid_grant") {
+	// 	throw new Error("Invalid Auth Code. Google OAuth API returned: error:invalid_grant");
+	// }
+};
+
+
 
 
 exports.accessTokenFromRefreshToken = async _ => {

@@ -19,6 +19,9 @@ const CheckoutStack			= createStackNavigator({ Checkout:		CheckoutScreen},		{ de
 const TransactionsStack		= createStackNavigator({ Transactions:	TransactionsScreen },	{ defaultNavigationOptions: { headerTitle: <HeaderBar /> } });
 const DisputesStack			= createStackNavigator({ Disputes:		DisputesScreen },		{ defaultNavigationOptions: { headerTitle: <HeaderBar /> } });
 
+
+
+
 ConfigurationStack.navigationOptions	= { tabBarLabel: 'Configuration',	tabBarIcon: ({ focused }) => ( <TabBarIcon focused={focused} name={"cog"} /> ) };
 OnboardingStack.navigationOptions		= { tabBarLabel: 'Onboarding',		tabBarIcon: ({ focused }) => ( <TabBarIcon focused={focused} name={"user-plus"} /> ) };
 CheckoutStack.navigationOptions			= { tabBarLabel: "Checkout",		tabBarIcon: ({ focused }) => ( <TabBarIcon focused={focused} name={"shopping-cart"} /> ) };

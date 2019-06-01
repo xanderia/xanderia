@@ -68,9 +68,13 @@ firestore.indexes.json
 firestore.rules
 storage.rules
 .firebase/*.cache
+apps/shop-playground/firebase-config.js
 
 # PayPal Credentials
 functions/config/paypal-credentials.json
 functions/config/google-credentials.js
 
 notes/google-auth-credentials.txt
+
+# Notes
+notes/*

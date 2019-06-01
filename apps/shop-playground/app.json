@@ -28,7 +28,9 @@
         },
         "web": {
             "publicPath": "/shop-playground/",
-			"output": "./../../dist/web/shop-playground"
+			"build": {
+				"output": "../../dist/web/shop-playground"
+			}
         }
 	}
 }

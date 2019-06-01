@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
+import log from "../xata/log";
+
 // 🅳🅴🅻🅴🆃🅴 import { MonoText } from '../components/StyledText';
 
 
@@ -21,7 +23,7 @@ export default class CheckoutScreen extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("CheckoutScreen.componentDidMount(): started", {"this.props": this.props});
+		// console.log("CheckoutScreen.componentDidMount(): started", {"this.props": this.props});
 		this.props.navigation.setParams({ auth: "myauth" });
 	}
 

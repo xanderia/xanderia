@@ -4,6 +4,7 @@
   "description": "Xanderia Monorepo",
   "main": "/dist/web/index.js",
   "scripts": {
+    "sp-deploy-hosting": "cd apps/shop-playground/; expo build:web; cd ../..; firebase deploy --only hosting; osascript -e 'display notification \"Build and Deployment complete\" with title \"Expo\" subtitle \"\" sound name \"Tink\"'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

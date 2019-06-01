@@ -3,8 +3,6 @@
 
 
 const paypal	= require("./paypal");
-const admin		= require("./admin");
-const auth		= require("./auth");
 
 // const functionsDB	= require("./functions-db");
 
@@ -17,6 +15,8 @@ const auth		= require("./auth");
 const webAuth	= require("./functions-web/auth");
 
 exports.webAuthGoogleAccessToken	= webAuth.googleAccessToken;
+exports.webAuthGoogleFlowStart		= webAuth.googleFlowStart;
+exports.webAuthGoogleFlowFinish		= webAuth.googleFlowFinish;
 
 
 
@@ -26,11 +26,3 @@ exports.paypalWebhooks				= paypal.webhooks;
 exports.paypalUCCClientToken		= paypal.retrieveUCCClientToken;
 exports.paypalOrderCreate			= paypal.orderCreate;
 exports.paypalOrderCapture			= paypal.orderCapture;
-
-exports.adminUsers					= admin.users;
-exports.adminIdentities				= admin.identities;
-exports.adminLogsEvents				= admin.logsEvents;
-exports.adminLogsUniversalEvents	= admin.logsUniversalEvents;
-
-exports.authGoogleStart				= auth.google.start;
-exports.authGoogleFinish			= auth.google.finish;
