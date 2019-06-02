@@ -65,7 +65,9 @@ const addTask = _ => new Promise(async (resolve, reject) => {
 		}
 	};
 
-	
+	log.c(f);
+
+
 });
 
 
@@ -83,7 +85,7 @@ const initClientDataObj = _ => new Promise(async (resolve, reject) => {
 const init = _ => new Promise(async (resolve, reject) => {
 
 	let f = {
-		name: "xia.auth.init",
+		name: "xia.auth.init()",
 		anonymousUserId: null,
 		userObj: null,
 		xanderiaDeviceId: null,

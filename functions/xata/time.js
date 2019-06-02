@@ -8,7 +8,7 @@ const objFromMoment = _ => {
 	return({
 		milliseconds:	_.valueOf(),
 		utc:			_.toISOString(),
-		firebase:		firebaseAdmin.firestore.Timestamp.fromDate(_.toDate())
+		firebase:		firebaseAdmin.firestore.Timestamp.fromDate(_.toDate())		// don't use firebaseAdmin
 	});
 };
 
