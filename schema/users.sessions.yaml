@@ -14,6 +14,19 @@ _xiaStatus: "active" # / "deleted" / "marked_for_deletion" / ...
 services:
     auth:
         _: "more"
+        tasks:
+            "time=2019-04-19T08:20:02.640Z|priority=3|id=UXncmUBAjVbn4C0GV9zyQa5d0nu1":
+                timeCreatedISO: "2019-04-19T08:20:02.640Z"
+                priority:       3
+                id:             "TCghYAgp953qPBHd3dRWSeSVgqWBE363"
+
+                taskType:       "startAuthFlowGoogle"
+                taskData:       {}
+                taskResponse:   {}
+
+
+        data:
+            _: 1
 
     tracking:
         _: "more"

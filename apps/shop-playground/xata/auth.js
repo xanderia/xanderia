@@ -3,10 +3,80 @@ import {Platform} from "react-native";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-import firebaseConfig from "../firebase-config";
+import firebaseConfig from "../firebase-credentials";
 
 import log from "./log";
 import xid from "./xid";
+
+
+
+// This file owns the client's services.auth data obj and takes care of initializing the entire client data on which all others build on top of.
+
+
+
+const initialClientDataObj = {
+	_xiaTimeCreatedFirebase: "",
+	_xiaTimeCreatedFirebase: "...",
+	_xiaTimeCreatedMilliseconds: "...",
+	_xiaTimeCreatedUTC: "...",
+
+	_xiaTimeModifiedFirebase: "...",
+	_xiaTimeModifiedMilliseconds: "...",
+	_xiaTimeModifiedUTC: "...",
+
+	_xiaStatus: "active",					//  # / "deleted" / "marked_for_deletion" / ...
+
+	services: {
+		auth: {
+			tasks: {
+				"time=2019-04-19T08:20:02.640Z|priority=3|id=UXncmUBAjVbn4C0GV9zyQa5d0nu1": {
+					timeCreatedISO: "2019-04-19T08:20:02.640Z",
+					priority:		3,
+					id:				"TCghYAgp953qPBHd3dRWSeSVgqWBE363",
+
+					taskType:		"startAuthFlowGoogle",
+					taskData:		{},
+					taskResponse:	{}	// or put this in "../data"
+				}
+			},
+
+			data: {
+			}
+		},
+
+		// tracking: {}		// The `tracking` service might want to initialize this itself.
+	},
+
+	apps: {
+		// shopPlayground: { _: "more" }	// The `shop-playground` app should create this itself.
+	}
+};
+
+
+const addTask = _ => new Promise(async (resolve, reject) => {
+
+	const f = {
+		name:	"xia.auth.addTask()",
+		input: {
+		},
+		output: {
+		},
+		data: {
+		}
+	};
+
+	
+});
+
+
+
+const initClientDataObj = _ => new Promise(async (resolve, reject) => {
+
+	// use initialClientDataObj
+	// only create if not already exists.
+
+
+});
 
 
 
@@ -36,18 +106,21 @@ const init = _ => new Promise(async (resolve, reject) => {
 
 	let unsubscribeAuthListener = firebase.auth().onAuthStateChanged(function(user) {
 		let f2 = {
-			name:			"xia.auth.onAuthStateChanged()",
-
-			isAnonymous:	user.isAnonymous,
-			displayName:	user.displayName,
-			email:			user.email,
-			emailVerified:	user.emailVerified,
-			phoneNumber:	user.phoneNumber,
-			photoURL:		user.photoURL,
-			providerData:	user.providerData,
-			creationTime:	user.metadata.creationTime,
-			lastSignInTime:	user.metadata.lastSignInTime
+			name:				"xia.auth.onAuthStateChanged()",
+			userObjIsDefined:	(user === null) ? true : false
 		};
+
+		if (user !== null) {
+			f2.isAnonymous		= user.isAnonymous;
+			f2.displayName		= user.displayName;
+			f2.email			= user.email;
+			f2.emailVerified	= user.emailVerified;
+			f2.phoneNumber		= user.phoneNumber;
+			f2.photoURL			= user.photoURL;
+			f2.providerData		= user.providerData;
+			f2.creationTime		= user.metadata.creationTime;
+			f2.lastSignInTime	= user.metadata.lastSignInTime;
+		}
 
 		log.c(f2);
 
